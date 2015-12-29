@@ -1,4 +1,4 @@
-<img src="doc/logo.png" width=256 align=right>
+<img src="private/doc/logo.png" width=256 align=right>
 <h1>OpenJSCAD.org</h1>
 
 <b>Version 0.3.1</b> (ALPHA)
@@ -6,64 +6,24 @@
 <b>OpenJSCAD.org</b> is a more up-to-date <a href="http://joostn.github.com/OpenJsCad/">OpenJsCAD</a> frontend where you can edit .jscad files either locally or online via JS editor (built-in).
 A few functions are available to make the transition from <a href="http://openscad.org/">OpenSCAD</a> to OpenJSCAD easier (<a href="https://github.com/Spiritdude/OpenSCAD.jscad">OpenSCAD.jscad</a> built-in),
 as well CLI (command-line interface) for server-side computations with NodeJS.
+<br>
+<br>
+This particular fork uses Meteor to manage dependencies and serve static resources. The core functions are separated into packages.
+
 
 <h2>Installation</h2>
 
 <b>Immediate Use</b>: No installation, go to <b><a href="http://openjscad.org">OpenJSCAD.org</a></b> (Google Chrome, Firefox)
 
 <b>Local Web Use:</b>
+Install Meteor as explained here <a href="https://www.meteor.com/install" title="Install Meteor">www.meteor.com/install</a>
 <pre>
-% git clone https://github.com/Spiritdude/OpenJSCAD.org
-% cd OpenJSCAD.org
-% make install
+% git clone https://github.com/nitrolabs/nitrocad
+% cd nitrocad
+% meteor
 </pre>
 
-and then access the files via local web-site and your web-browser. 
-
-<b>Local CLI Use:</b>
-
-For CLI (command-line interface) rendering install <a href="http://nodejs.org/">NodeJS</a> as well, e.g. <tt>apt-get install nodejs</tt> (be aware <b>NodeJS &gt; 0.8.1 or newer is required</b>) and then test it:
-<pre>
-% cd examples/
-% openjscad example005.jscad                         # -- creates example005.stl as default
-% openjscad example001.jscad -o test.stl
-% openjscad example001.scad -o example001scad.jscad  # -- convert .scad into .jscad
-% openjscad frog.stl -o test.jscad                   # -- convert .stl into .jscad
-% openjscad logo.jscad -of amf                       # -- convert logo.jscad into logo.amf
-</pre>
-
-<b>Note:</b> on some systems the NodeJS executable is <tt>node</tt> (default) or <tt>nodejs</tt>, edit <tt>openjscad</tt> first line to reflect this.
-
-<h2>History</h2>
-<ul>
-<li>2015/10/23: 0.3.1: including new parameter options by Z3 Dev
-<li>2015/07/02: 0.3.0: format.js (Stefan Baumann), and Blob.js/openjscad improved by Z3 Dev
-<li>2015/05/20: 0.2.4: renumbering, latest csg.js from http://joostn.github.com/OpenJsCad/ adapted
-<li>2015/04/08: 0.024: dev branch opened
-<li>2015/02/14: 0.023: bumping version based on openscad.js
-<li>2015/02/04; 0.020: browser window resizing done properly, thanks to Z3 devs via pull request
-<li>2015/01/07: 0.019: various pull requests from github merged again
-<li>2014/10/05: 0.018: various pull requests from github merged
-<li>2013/04/11: 0.017: alpha channel supported in color() and .setColor()
-<li>2013/04/07: 0.016: csg.js: solidFromSlices() and .setColor() on polygon level, and examples by Eduard Bespalov
-<li>2013/04/05: 0.015: rudimentary AMF export and import, web and cli
-<li>2013/04/03: 0.014: multiple files via drag & drop, developing locally
-<li>2013/04/01: 0.013: include() on web-online & drag & drop (but not off-line) and cli (server-side)
-<li>2013/03/20: 0.012: improved UI (slider from the left)
-<li>2013/03/28: 0.011: added support for rectangular_extrude(), rotate_extrude() and torus()
-<li>2013/03/22: 0.010: leave .scad file intact, and translate on-the-fly
-<li>2013/03/20: 0.009: OpenSCAD .scad syntax support included via <a href="https://github.com/garyhodgson/openscad-openjscad-translator">openscad-openjscad-translator</a> module, on web and cli; and experimental .stl import support (binary & ascii)
-<li>2013/03/15: 0.008: circle(), square(), polygon() partially and linear_extrude() implemented (openscad-like)
-<li>2013/03/14: 0.007: integrating jQuery for new features; draggable hint window
-<li>2013/03/12: 0.006: included examples available in the web-frontend direct
-<li>2013/03/12: 0.005: supporting webgui parameters as of original OpenJsCad (see examples/example030.jscad)
-<li>2013/03/11: 0.004: openscad.js: many improvements, more OpenSCAD-like functions
-<li>2013/03/10: 0.003: solidify the functionality (few bug fixes)
-<li>2013/03/10: 0.001: initial version
-</ul>
-
-See for more details <a href="https://plus.google.com/115007999023701819645">G+ OpenJSCAD.org Announcements</a> and
-<a href="https://plus.google.com/communities/114958480887231067224">G+ OpenJSCAD Community</a> to discuss with other user and developers.
+and then access the files via local web-site and your web-browser.
 
 <h2>Todo</h2>
 <ul>
@@ -89,19 +49,19 @@ See for more details <a href="https://plus.google.com/115007999023701819645">G+ 
 <h2>Screenshots</h2>
 
 Simple JSCAD example (example000.jscad):
-<img src="doc/sshot-01.png">
+<img src="private/doc/sshot-01.png">
 
 More sophisticated JSCAD example, fully object-oriented (OO) programmed with interactive parameters (example031.jscad):
-<img src="doc/sshot-03-illu.png">
+<img src="private/doc/sshot-03-illu.png">
 
 Import of STL models:
-<img src="doc/sshot-04.png">
+<img src="private/doc/sshot-04.png">
 
 Drag & drop a local file:
-<img src="doc/sshot-05-illu.png">
+<img src="private/doc/sshot-05-illu.png">
 
 Drag & drop multiple files (Chrome & Firefox) or a folder (Chrome):
-<img src="doc/sshot-06-illu.png">
+<img src="private/doc/sshot-06-illu.png">
 
 <h2>See Also</h2>
 <ul>
